@@ -1,0 +1,25 @@
+{
+  "name": "client-server-arkitektur",
+  "version": "1.0.0",
+  "description": "3-semester-systemudviklingspjojekt",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simon-stentoft/3-semester-systemudviklingsprojekt.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "ejs",
+    "express"
+  ],
+  "author": "Allan ,Dan, Simon",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
