@@ -10,6 +10,20 @@ app.listen(3000);
 app.set('view engine', 'ejs');
 // app.set('views', 'myviews');
 
+// middleware & static files
+app.use(express.static('public'));
+
+app.use((req, res, next) => {
+    console.log('new request made:');
+    console.log('host: ', req.hostname);
+    console.log('path: ', req.path);
+    console.log('method: ', req.method);
+    console.log('ip',req.ip);
+      
+      console.log('');
+    next();
+  })
+
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home'});
 });
