@@ -22,7 +22,7 @@ app.use((req, res, next) => {
       
       console.log('');
     next();
-  })
+  });
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home'});
