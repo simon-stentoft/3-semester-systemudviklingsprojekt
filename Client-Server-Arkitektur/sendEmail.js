@@ -1,5 +1,5 @@
 var nodemailer = require('nodemailer');
-var userMail = 'vupetersendan@gmail.com';
+var userMail = 'kamikazi68@gmail.com';
 var senderMail = 'weatherchecker.noreply@gmail.com';
 var weather = require('weather-js');
 
@@ -9,7 +9,7 @@ function sendEmail() {
         service: 'gmail',
         auth: {
             user: 'weatherchecker.noreply@gmail.com',
-            pass: 'ftvuwfgtozpuafzg'
+            pass: 'gznzxlrxtxpqsotu'
         }
     });
 
@@ -63,4 +63,6 @@ function sendEmail() {
             console.log('Email sent: ' + info.response);
         }
     });
+    return userMail;
 }
+console.log(sendEmail());
