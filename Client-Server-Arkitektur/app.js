@@ -1,4 +1,9 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
+//Connect to MongoDB
+const dbURL = 'mongodb+srv://alla2297:Data1234@cluster0.7rjjull.mongodb.net/UserData?retryWrites=true&w=majority';
+mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // express app
 const app = express();
