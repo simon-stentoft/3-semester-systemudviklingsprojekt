@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
-var userMail = 'kamikazi68@gmail.com';
+var userMail = 'vupetersendan@gmail.com';
 var senderMail = 'weatherchecker.noreply@gmail.com';
-var weather = require('weather-js');
+var weather = 'Snowy';
 
 
 function sendEmail() {
@@ -18,8 +18,8 @@ function sendEmail() {
             mailOptions = {
                 from: senderMail,
                 to: userMail,
-                subject: 'Weather Checker',
-                text: 'It is sunny tomorrow. You should wear sunglasses.'
+                subject: 'Weather Checker',       
+                text: 'It is sunny tomorrow. You should wear sunglasses.',
             };
             break;
         case 'Rainy':
@@ -43,7 +43,20 @@ function sendEmail() {
                 from: senderMail,
                 to: userMail,
                 subject: 'Weather Checker',
-                text: 'It is snowy tomorrow. You should wear a jacket.'
+                html: `<h1>It is snowy tomorrow. You should wear a jacket.</h1>`,
+                
+        // An array of attachments
+        attachments: [
+
+    
+
+            // File Stream attachment
+            {
+                filename: 'snowflake.png',
+                path: __dirname + '/pictures/weather/snowflake.png',
+                cid: 'snowy@example.com' // should be as unique as possible
+            }
+        ],
             };
             break;
         default:
@@ -55,6 +68,8 @@ function sendEmail() {
             };
             break;
     }
+
+    
     
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
