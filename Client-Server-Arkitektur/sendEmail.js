@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
 var userMail = 'vupetersendan@gmail.com';
 var senderMail = 'weatherchecker.noreply@gmail.com';
-var weather = require('weather-js');
+var weather = 'Snowy';
 
 
 function sendEmail() {
@@ -9,7 +9,7 @@ function sendEmail() {
         service: 'gmail',
         auth: {
             user: 'weatherchecker.noreply@gmail.com',
-            pass: 'ftvuwfgtozpuafzg'
+            pass: 'gznzxlrxtxpqsotu'
         }
     });
 
@@ -18,8 +18,8 @@ function sendEmail() {
             mailOptions = {
                 from: senderMail,
                 to: userMail,
-                subject: 'Weather Checker',
-                text: 'It is sunny today. You should wear sunglasses.'
+                subject: 'Weather Checker',       
+                text: 'It is sunny tomorrow. You should wear sunglasses.',
             };
             break;
         case 'Rainy':
@@ -27,7 +27,7 @@ function sendEmail() {
                 from: senderMail,
                 to: userMail,
                 subject: 'Weather Checker',
-                text: 'It is rainy today. You should take an umbrella.'
+                text: 'It is rainy tomorrow. You should take an umbrella.'
             };
             break;
         case 'Cloudy':
@@ -35,7 +35,7 @@ function sendEmail() {
                 from: senderMail,
                 to: userMail,
                 subject: 'Weather Checker',
-                text: 'It is cloudy today. You should wear a jacket.'
+                text: 'It is cloudy tomorrow. You should wear a jacket.'
             };
             break;
         case 'Snowy':
@@ -43,7 +43,20 @@ function sendEmail() {
                 from: senderMail,
                 to: userMail,
                 subject: 'Weather Checker',
-                text: 'It is snowy today. You should wear a jacket.'
+                html: `<h1>It is snowy tomorrow. You should wear a jacket.</h1>`,
+                
+        // An array of attachments
+        attachments: [
+
+    
+
+            // File Stream attachment
+            {
+                filename: 'snowflake.png',
+                path: __dirname + '/pictures/weather/snowflake.png',
+                cid: 'snowy@example.com' // should be as unique as possible
+            }
+        ],
             };
             break;
         default:
@@ -51,10 +64,12 @@ function sendEmail() {
                 from: senderMail,
                 to: userMail,
                 subject: 'Weather Checker',
-                text: 'It is sunny today. You should wear sunglasses.'
+                text: 'It is sunny tomorrow. You should wear sunglasses.'
             };
             break;
     }
+
+    
     
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
@@ -63,4 +78,6 @@ function sendEmail() {
             console.log('Email sent: ' + info.response);
         }
     });
+    return 1;
 }
+console.log(sendEmail());

@@ -3,4 +3,55 @@ body{
     background-color: #add1eb98;
     /* #eaeaea #add1eb  #e9eaf0 */
     /*https://looka.com/blog/25-winter-color-palettes/*/
+    margin: 0px;
+    padding: 0px;
 }
+p, h1, h2, h3, a, ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+}
+
+nav div {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    /*padding-bottom: 10px;*/
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    background-color: #e9eaf0;
+}
+
+nav div ul{
+    display: flex;
+    align-items: flex-end;
+}
+
+nav div li{
+    list-style-type: none;
+    margin-left: 5px;
+}
+
+nav ul.navigtion{
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+footer{
+    
+   padding-top: 10px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    min-height: 100px;
+    background-color: #e9eaf0;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+div{
+    margin: 20px;
+}
+  
