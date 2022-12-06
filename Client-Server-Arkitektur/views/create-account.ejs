@@ -1,0 +1,40 @@
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="Login">
+        <picture>
+            <img src="1.png" alt="banner1" class="banner1">
+        </picture>
+        <div>
+            <H1>Lav Bruger: </H1>
+            <br><br>
+            <form action="/Create-Account" method="POST">
+                <label for="username">Skriv Brugernavn:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+                <label for="email">Skriv Email:</label>
+                <input type="email" id="email" name="email"required>
+                <br><br>
+                <label for="password">Skriv Kodeord</label>
+                <input type="password" id="password" name="password"required>
+                <br><br>
+                <label for="City">Skriv By</label>
+                <input type="text" id="City" name="City"required>
+                <br><br>
+                <button>Enter</button>
+            </form>
+        </div>
+        
+
+        <picture>
+            <img src="2.png" alt="banner2" class="banner2">
+        </picture>
+    </div>
+
+
+    
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

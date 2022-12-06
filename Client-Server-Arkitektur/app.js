@@ -1,13 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { start } = require('repl');
+const User = require('./models/user');
 
 
 //Connect to MongoDB
 const dbURL = 'mongodb+srv://alla2297:Data1234@cluster0.7rjjull.mongodb.net/UserData?retryWrites=true&w=majority';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
-.then((result) => console.log('Connected to DB'))
+.then((result) => app.listen(3041))
 .catch((err) => console.log(err));
+
+
 
 
 
@@ -15,7 +18,7 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 const app = express();
 
 // listen for requests
-app.listen(3000);
+
 
 // register view engine
 app.set('view engine', 'ejs');
@@ -23,6 +26,7 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
     console.log('new request made:');
@@ -49,6 +53,28 @@ app.get('/partners', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact'});
+});
+app.get('/Create-Account', (req, res) => {
+    res.render('create-account', { title: 'Create-Account'});
+});
+app.post('/Create-Account', (req, res) => {
+    console.log(req.body);
+    const user = new User(req.body);
+    //save to database
+    user.save()
+    //Async function that returns a promise
+    .then((result) => {
+    res.redirect('/Login');
+    })
+    .catch((err) => {
+    console.log(err);
+    });
+    //print to console for testing purposes only
+    console.log(req.body.username);
+});
+
+app.get('/Login', (req, res) => {
+    res.render('login', { title: 'Login'});
 });
 
 // 404 page
