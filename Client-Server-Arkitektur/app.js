@@ -13,6 +13,7 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 
+
 // express app
 const app = express();
 
@@ -51,6 +52,12 @@ app.get('/partners', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact'});
+});
+app.get('/Create-Account', (req, res) => {
+    res.render('create-account', { title: 'Create-Account'});
+});
+app.get('/Login', (req, res) => {
+    res.render('login', { title: 'Login'});
 });
 
 app.get('/Create-Account', (req, res) => {
