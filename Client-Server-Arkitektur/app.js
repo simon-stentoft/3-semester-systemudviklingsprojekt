@@ -7,7 +7,7 @@ const { start } = require('repl');
 const dbURL = 'mongodb+srv://alla2297:Data1234@cluster0.7rjjull.mongodb.net/UserData?retryWrites=true&w=majority';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then((result) => console.log('Connected to DB'))
-.catch((err) => console.log(err));
+.catch((err) => console.log(err,"not connected !!"));
 
 
 
@@ -49,6 +49,12 @@ app.get('/partners', (req, res) => {
 
 app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact'});
+});
+app.get('/Create-Account', (req, res) => {
+    res.render('create-account', { title: 'Create-Account'});
+});
+app.get('/Login', (req, res) => {
+    res.render('login', { title: 'Login'});
 });
 
 // 404 page
