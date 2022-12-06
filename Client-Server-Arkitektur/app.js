@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { start } = require('repl');
-const User = require('./createUser');
 
 
 //Connect to MongoDB
@@ -26,6 +25,7 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
     console.log('new request made:');
@@ -56,23 +56,15 @@ app.get('/contact', (req, res) => {
 app.get('/Create-Account', (req, res) => {
     res.render('create-account', { title: 'Create-Account'});
 });
-app.get('/Login', (req, res) => {
-    res.render('login', { title: 'Login'});
+app.post('/Create-Account', (req, res) => {
+    console.log(req.body);
+    res.redirect('/Login');
+    
+    console.log(req.body.username);
 });
 
-app.get('/Create-Account', (req, res) => {
-    const user = new User({
-        name: 'Alla',
-        email: 'alla2297@edu.zealand.dk',
-        password: '1234'
-    });
-    user.save()
-    .then((result) => {
-        res.send(result);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+app.get('/Login', (req, res) => {
+    res.render('login', { title: 'Login'});
 });
 
 // 404 page
