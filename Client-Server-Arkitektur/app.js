@@ -1,13 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { start } = require('repl');
+const User = require('./createUser');
 
 
 //Connect to MongoDB
 const dbURL = 'mongodb+srv://alla2297:Data1234@cluster0.7rjjull.mongodb.net/UserData?retryWrites=true&w=majority';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
-.then((result) => console.log('Connected to DB'))
-.catch((err) => console.log(err,"not connected !!"));
+.then((result) => app.listen(3041))
+.catch((err) => console.log(err));
+
+
 
 
 
@@ -15,7 +18,7 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 const app = express();
 
 // listen for requests
-app.listen(3000);
+
 
 // register view engine
 app.set('view engine', 'ejs');
@@ -55,6 +58,21 @@ app.get('/Create-Account', (req, res) => {
 });
 app.get('/Login', (req, res) => {
     res.render('login', { title: 'Login'});
+});
+
+app.get('/Create-Account', (req, res) => {
+    const user = new User({
+        name: 'Alla',
+        email: 'alla2297@edu.zealand.dk',
+        password: '1234'
+    });
+    user.save()
+    .then((result) => {
+        res.send(result);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 });
 
 // 404 page
