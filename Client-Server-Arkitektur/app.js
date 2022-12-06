@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { start } = require('repl');
+const User = require('./models/user');
 
 
 //Connect to MongoDB
@@ -58,8 +59,17 @@ app.get('/Create-Account', (req, res) => {
 });
 app.post('/Create-Account', (req, res) => {
     console.log(req.body);
+    const user = new User(req.body);
+    //save to database
+    user.save()
+    //Async function that returns a promise
+    .then((result) => {
     res.redirect('/Login');
-    
+    })
+    .catch((err) => {
+    console.log(err);
+    });
+    //print to console for testing purposes only
     console.log(req.body.username);
 });
 
