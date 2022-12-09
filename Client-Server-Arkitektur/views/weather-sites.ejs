@@ -4,7 +4,7 @@
     <%- include("./partials/nav.ejs") %>
 
     <div class="weather-overview-content">
-        <form action="/weather-sites" method="GET">
+        <form action="/weather-sites" method="POST">
             <input type="text" id="cityInput" value="" placeholder="Skriv by navn her" name="cityInput">
             <br>
             <button id="search">Søg</button>
