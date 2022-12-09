@@ -1,3 +1,4 @@
+const e = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
 const { start } = require('repl');
@@ -55,7 +56,17 @@ app.post('/weather_sites', (req, res) => {
     const units = "&units=metric";
     const city = "Faxe"
     const url = api + city + apiKey + units;
+
+    fetch(url)
+    .then(response=> response.json())
+    .then(data => {
+        const todayWeather = document.getElementById("day1" + "weather").innerHTML;
+        console.log(todayWeather);
+        res.render('weather-sites', { title: 'Weather Overview'});
+    }) 
+    .catch(err => console.log(err));
 });
+
 
 app.get('/partners', (req, res) => {
     res.render('partners', { title: 'Partner'});
