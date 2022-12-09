@@ -47,6 +47,10 @@ app.get('/weather_overview', (req, res) => {
     res.render('weather-sites', { title: 'Weather Overview'});
 });
 
+app.post('/weather_overview', (req, res) => {
+    console.log(req.body);
+});
+
 app.get('/partners', (req, res) => {
     res.render('partners', { title: 'Partner'});
 });
