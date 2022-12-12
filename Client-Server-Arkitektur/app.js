@@ -47,19 +47,20 @@ app.get('/weather_overview', (req, res) => {
     res.render('weather-sites', { title: 'Weather Overview'});
 });
 
-app.post('/weather_sites', (req, res) => {
+app.post('/weather-sites', (req, res) => {
     console.log(req.body);
 
     const api = "https://api.openweathermap.org/data/2.5/forecast?q=";
     const apiKey = "&appid=b8641c6cc5ebb3f3ef8c6e5e69c0370c";
     const units = "&units=metric";
-    const city = "Faxe"
+    const city = req.body.cityInput;
     const url = api + city + apiKey + units;
 
     fetch(url)
     .then(response=> response.json())
     .then(data => {
-        const todayWeather = document.getElementById("day1" + "weather").innerHTML;
+        //const todayWeather = document.getElementById("day1" + "weather").innerHTML;
+        const todayWeather = data.list[0].weather[0].description;
         console.log(todayWeather);
         res.render('weather-sites', { title: 'Weather Overview'});
     }) 
