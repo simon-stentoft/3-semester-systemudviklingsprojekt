@@ -8,10 +8,8 @@ const User = require('./models/user');
 //Connect to MongoDB
 const dbURL = 'mongodb+srv://alla2297:Data1234@cluster0.7rjjull.mongodb.net/UserData?retryWrites=true&w=majority';
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
-.then((result) => app.listen(3041))
+.then((result) => app.listen(3042))
 .catch((err) => console.log(err));
-
-
 
 
 
@@ -19,6 +17,7 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
 const app = express();
 
 // listen for requests
+//app.listen(3042);
 
 
 // register view engine

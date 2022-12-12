@@ -13,7 +13,11 @@ const userSchema = new schema({
     password: {
         type: String,
         required: true
-    }   
+    },   
+    city: {
+        type: String,
+        required: true
+    }
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
