@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/weather_overview', (req, res) => {
-    res.render('weather-sites', { title: 'Weather Overview'});
+    res.render('weather-sites', { title: 'Weather Overview', day1: 'loading', day2: 'loading', day3: 'loading', day4: 'loading', day5: 'loading'});
 });
 
 app.post('/weather-sites', (req, res) => {
@@ -60,9 +60,31 @@ app.post('/weather-sites', (req, res) => {
     .then(response=> response.json())
     .then(data => {
         //const todayWeather = document.getElementById("day1" + "weather").innerHTML;
-        const todayWeather = data.list[0].weather[0].description;
-        console.log(todayWeather);
-        res.render('weather-sites', { title: 'Weather Overview'});
+        let dayChange = 0;
+        let weekday = new Array(8);
+        let week = new Array(5);
+        week = [weekday[0], weekday[1], weekday[2], weekday[3], weekday[4]];
+        for(a = 0; a <= 4; a++){
+            for(i = dayChange; i <= 7+dayChange; i++){
+            const todayWeather = data.list[i].weather[0].main;
+            const todayTemp = data.list[i].main.temp;
+            const todayIcon = data.list[i].weather[0].icon;
+            const todayDate = data.list[i].dt_txt;
+
+            weekday[i] = {todayWeather, todayTemp, todayIcon, todayDate};
+
+            console.log(todayWeather);
+            console.log(todayTemp);
+            console.log(todayIcon);
+            console.log(todayDate);
+            console.log("");
+            }
+            dayChange += 8;
+            week[a] = weekday;
+        }
+
+        
+        res.render('weather-sites', { title: 'Weather Overview', day1: week[0], day2: week[1], day3: week[2], day4: week[3], day5: week[4]});
     }) 
     .catch(err => console.log(err));
 });

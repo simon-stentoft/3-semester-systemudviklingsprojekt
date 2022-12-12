@@ -16,6 +16,12 @@
                     <p class="weather" id="day1"></p>
                     <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img1"></div>
                     <p class="maxValue" id="day1MaxValue">Loading..</p>
+                    <div>
+                    <% for(var i = 0; i < 8; i++) { %>
+                        <p><%= day1[i].todayWeather %></p>
+                        <br>
+                    <% } %>
+                </div>
                 </div>
                 <div id="icons">
                     <p class="weather" id="day2"></p>
