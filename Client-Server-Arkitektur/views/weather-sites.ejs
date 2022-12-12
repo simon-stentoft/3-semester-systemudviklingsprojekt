@@ -4,9 +4,41 @@
     <%- include("./partials/nav.ejs") %>
 
     <div class="weather-overview-content">
-        
-
-
+        <form action="/weather-sites" method="POST">
+            <input type="text" id="cityInput" value="" placeholder="Skriv by navn her" name="cityInput">
+            <br>
+            <button id="search">Søg</button>
+            <h2 id="currentCityName">Søg efter en by</h2>
+        </form>
+        <div id="fiveDayWeather">
+            <div id="iconsContainer">
+                <div id="icons">
+                    <p class="weather" id="day1"></p>
+                    <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img1"></div>
+                    <p class="maxValue" id="day1MaxValue">Loading..</p>
+                </div>
+                <div id="icons">
+                    <p class="weather" id="day2"></p>
+                    <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img2"></div>
+                    <p class="maxValue" id="day2MaxValue">Loading..</p>
+                </div>
+                <div id="icons">
+                    <p class="weather" id="day3"></p>
+                    <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img3"></div>
+                    <p class="maxValue" id="day3MaxValue">Loading..</p>
+                </div>
+                <div id="icons">
+                    <p class="weather" id="day4"></p>
+                    <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img4"></div>
+                    <p class="maxValue" id="day4MaxValue">Loading..</p>
+                </div>
+                <div id="icons">
+                    <p class="weather" id="day5"></p>
+                    <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img5"></div>
+                    <p class="maxValue" id="day5MaxValue">Loading..</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 
