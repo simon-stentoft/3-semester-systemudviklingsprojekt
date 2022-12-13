@@ -44,7 +44,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/weather_overview', (req, res) => {
-    res.render('weather-sites', { title: 'Weather Overview', day1: 'loading', day2: 'loading', day3: 'loading', day4: 'loading', day5: 'loading'});
+    res.render('weather-sites', { title: 'Weather Overview', 
+    day1: 'Loading',day1temp:'', 
+    day2: 'Loading',day2temp:'', 
+    day3: 'Loading',day3temp:'', 
+    day4: 'Loading',day4temp:'', 
+    day5: 'Loading',day5temp:''});
 });
 
 app.post('/weather-sites', (req, res) => {
@@ -73,18 +78,29 @@ app.post('/weather-sites', (req, res) => {
 
             weekday[i] = {todayWeather, todayTemp, todayIcon, todayDate};
 
-            console.log(todayWeather);
+            /*console.log(todayWeather);
             console.log(todayTemp);
             console.log(todayIcon);
             console.log(todayDate);
-            console.log("");
+            console.log("");*/
+            console.log(weekday[i],'_________________________________',i);
             }
             dayChange += 8;
             week[a] = weekday;
         }
-
         
-        res.render('weather-sites', { title: 'Weather Overview', day1: week[0], day2: week[1], day3: week[2], day4: week[3], day5: week[4]});
+        console.log ("hey( ",weekday[0].todayWeather,'\n',weekday[0].todayDate,' )hey___________________________________hey',
+        '\n',weekday[1].todayWeather,'\n',weekday[1].todayDate,'\n',
+        '\n',weekday[2].todayWeather,'\n',weekday[2].todayDate,'\n',
+        '\n',weekday[3].todayWeather,'\n',weekday[3].todayDate,'\n');
+        res.render('weather-sites', 
+        { title: 'Weather Overview', 
+            day1: weekday[0].todayWeather,day1temp: weekday[0].todayTemp, 
+            day2: weekday[1].todayWeather,day2temp: weekday[1].todayTemp,
+            day3: weekday[2].todayWeather,day3temp: weekday[2].todayTemp, 
+            day4: weekday[3].todayWeather,day4temp: weekday[3].todayTemp, 
+            day5: weekday[4].todayWeather,day5temp: weekday[4].todayTemp
+        });
     }) 
     .catch(err => console.log(err));
 });

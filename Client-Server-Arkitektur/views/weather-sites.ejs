@@ -13,35 +13,30 @@
         <div id="fiveDayWeather">
             <div id="iconsContainer">
                 <div id="icons">
-                    <p class="weather" id="day1"></p>
+                    <p class="weather" id="day1"><%= day1 %></p>
                     <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img1"></div>
-                    <p class="maxValue" id="day1MaxValue">Loading..</p>
-                    <div>
-                    <% for(var i = 0; i < 8; i++) { %>
-                        <p><%= day1[i].todayWeather %></p>
-                        <br>
-                    <% } %>
-                </div>
+                    <p class="maxValue" id="day1MaxValue"><%= day1temp%></p>
+                    
                 </div>
                 <div id="icons">
-                    <p class="weather" id="day2"></p>
+                    <p class="weather" id="day2"><%= day2 %></p>
                     <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img2"></div>
-                    <p class="maxValue" id="day2MaxValue">Loading..</p>
+                    <p class="maxValue" id="day2MaxValue"><%= day2temp%></p>
                 </div>
                 <div id="icons">
-                    <p class="weather" id="day3"></p>
+                    <p class="weather" id="day3"><%= day3 %></p>
                     <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img3"></div>
-                    <p class="maxValue" id="day3MaxValue">Loading..</p>
+                    <p class="maxValue" id="day3MaxValue"><%= day3temp%></p>
                 </div>
                 <div id="icons">
-                    <p class="weather" id="day4"></p>
+                    <p class="weather" id="day4"><%= day4 %></p>
                     <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img4"></div>
-                    <p class="maxValue" id="day4MaxValue">Loading..</p>
+                    <p class="maxValue" id="day4MaxValue"><%= day4temp%></p>
                 </div>
                 <div id="icons">
-                    <p class="weather" id="day5"></p>
+                    <p class="weather" id="day5"><%= day5 %></p>
                     <div class="image"><img src="https://i.imgur.com/revg4uS.png" id="img5"></div>
-                    <p class="maxValue" id="day5MaxValue">Loading..</p>
+                    <p class="maxValue" id="day5MaxValue"><%= day5temp%></p>
                 </div>
             </div>
         </div>
