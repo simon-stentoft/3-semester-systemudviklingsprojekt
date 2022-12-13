@@ -99,7 +99,7 @@ app.post('/weather-sites', (req, res) => {
             weekday[6].todayDate[8]+weekday[6].todayDate[9],
             weekday[7].todayDate[8]+weekday[7].todayDate[9]
         ];
-        console.log(day,'welcome',p[2]);
+        console.log(day,'welcome',arrayOfTheFirst8Indexs[2]);
         if (day==arrayOfTheFirst8Indexs[0]) {
             res.render('weather-sites', { title: 'Weather Overview', 
                 day1: weekday[8].todayWeather,day1temp: weekday[8].todayTemp, 
