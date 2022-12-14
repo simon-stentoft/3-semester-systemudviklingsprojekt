@@ -104,18 +104,18 @@ app.post('/weather-sites', (req, res) => {
             res.render('weather-sites', { title: 'Weather Overview', 
                 day1: weekday[8].todayWeather,day1temp: weekday[8].todayTemp, 
                 day2: weekday[16].todayWeather,day2temp: weekday[16].todayTemp,
-                day3: weekday[21].todayWeather,day3temp: weekday[21].todayTemp, 
-                day4: weekday[29].todayWeather,day4temp: weekday[29].todayTemp, 
-                day5: weekday[37].todayWeather,day5temp: weekday[37].todayTemp
+                day3: weekday[24].todayWeather,day3temp: weekday[24].todayTemp, 
+                day4: weekday[32].todayWeather,day4temp: weekday[32].todayTemp, 
+                day5: weekday[40].todayWeather,day5temp: weekday[40].todayTemp
             });
         }else if (day==arrayOfTheFirst8Indexs[1]) {
             let index =1;
             res.render('weather-sites', { title: 'Weather Overview', 
                 day1: weekday[0].todayWeather,day1temp: weekday[0].todayTemp, 
-                day2: weekday[index+8].todayWeather,day2temp: weekday[index+8].todayTemp,
-                day3: weekday[index+16].todayWeather,day3temp: weekday[index+16].todayTemp, 
-                day4: weekday[index+21].todayWeather,day4temp: weekday[index+21].todayTemp, 
-                day5: weekday[index+29].todayWeather,day5temp: weekday[index+29].todayTemp
+                day2: weekday[index].todayWeather,day2temp: weekday[index].todayTemp,
+                day3: weekday[index+8].todayWeather,day3temp: weekday[index+8].todayTemp, 
+                day4: weekday[index+16].todayWeather,day4temp: weekday[index+16].todayTemp, 
+                day5: weekday[index+24].todayWeather,day5temp: weekday[index+24].todayTemp
             });
             
         }else if (day==arrayOfTheFirst8Indexs[2]) {
@@ -125,7 +125,7 @@ app.post('/weather-sites', (req, res) => {
                 day2: weekday[index].todayWeather,day2temp: weekday[index].todayTemp,
                 day3: weekday[index+8].todayWeather,day3temp: weekday[index+8].todayTemp, 
                 day4: weekday[index+16].todayWeather,day4temp: weekday[index+16].todayTemp, 
-                day5: weekday[index+21].todayWeather,day5temp: weekday[index+21].todayTemp
+                day5: weekday[index+24].todayWeather,day5temp: weekday[index+24].todayTemp
             });
         }else if (day==arrayOfTheFirst8Indexs[3]) {
             let index=3;
@@ -134,26 +134,28 @@ app.post('/weather-sites', (req, res) => {
                 day2: weekday[index].todayWeather,day2temp: weekday[index].todayTemp,
                 day3: weekday[index+8].todayWeather,day3temp: weekday[index+8].todayTemp, 
                 day4: weekday[index+16].todayWeather,day4temp: weekday[index+16].todayTemp, 
-                day5: weekday[index+21].todayWeather,day5temp: weekday[index+21].todayTemp
+                day5: weekday[index+24].todayWeather,day5temp: weekday[index+24].todayTemp
             });
         }else if (day==arrayOfTheFirst8Indexs[4]) {
+            console.log('jey');
             let index=4;
             res.render('weather-sites', { title: 'Weather Overview', 
                 day1: weekday[0].todayWeather,day1temp: weekday[0].todayTemp, 
                 day2: weekday[index].todayWeather,day2temp: weekday[index].todayTemp,
                 day3: weekday[index+8].todayWeather,day3temp: weekday[index+8].todayTemp, 
                 day4: weekday[index+16].todayWeather,day4temp: weekday[index+16].todayTemp, 
-                day5: weekday[index+21].todayWeather,day5temp: weekday[index+21].todayTemp
+                day5: weekday[index+24].todayWeather,day5temp: weekday[index+24].todayTemp
             });
             
         }else if (day==arrayOfTheFirst8Indexs[5]) {
             let index=5;
+            console.log('jey5');
             res.render('weather-sites', { title: 'Weather Overview', 
                 day1: weekday[0].todayWeather,day1temp: weekday[0].todayTemp, 
                 day2: weekday[index].todayWeather,day2temp: weekday[index].todayTemp,
                 day3: weekday[index+8].todayWeather,day3temp: weekday[index+8].todayTemp, 
                 day4: weekday[index+16].todayWeather,day4temp: weekday[index+16].todayTemp, 
-                day5: weekday[index+21].todayWeather,day5temp: weekday[index+21].todayTemp
+                day5: weekday[index+24].todayWeather,day5temp: weekday[index+24].todayTemp
             });
             
         }else if (day==arrayOfTheFirst8Indexs[6]) {
@@ -163,7 +165,7 @@ app.post('/weather-sites', (req, res) => {
                 day2: weekday[index].todayWeather,day2temp: weekday[index].todayTemp,
                 day3: weekday[index+8].todayWeather,day3temp: weekday[index+8].todayTemp, 
                 day4: weekday[index+16].todayWeather,day4temp: weekday[index+16].todayTemp, 
-                day5: weekday[index+21].todayWeather,day5temp: weekday[index+21].todayTemp
+                day5: weekday[index+24].todayWeather,day5temp: weekday[index+24].todayTemp
             });
             
         }else if (day==arrayOfTheFirst8Indexs[7]) {
@@ -173,7 +175,7 @@ app.post('/weather-sites', (req, res) => {
                 day2: weekday[index].todayWeather,day2temp: weekday[index].todayTemp,
                 day3: weekday[index+8].todayWeather,day3temp: weekday[index+8].todayTemp, 
                 day4: weekday[index+16].todayWeather,day4temp: weekday[index+16].todayTemp, 
-                day5: weekday[index+21].todayWeather,day5temp: weekday[index+21].todayTemp
+                day5: weekday[index+24].todayWeather,day5temp: weekday[index+24].todayTemp
             });
             
         }else{
